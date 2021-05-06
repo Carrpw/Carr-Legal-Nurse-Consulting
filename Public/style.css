@@ -115,8 +115,8 @@ main {
 .box1{
     display: flex;
     width: 25vw;
-    height: 20vw;
-    top: -10px;
+    height: 18vw;
+    top: -1px;
     left: 50px;
     background-color:#3c5a9b;
     z-index: 3;
@@ -128,7 +128,7 @@ main {
     display: flex;
     width: 25vw;
     height: 24vw;
-    top: 80px;
+    top: 120px;
     left: 120px;
     background-color: rgb(83, 83, 83);
     z-index: 4;
@@ -362,5 +362,5 @@ main {
 }
 
 .delta {
-    
+    padding-top: 3.5vh;
 }
