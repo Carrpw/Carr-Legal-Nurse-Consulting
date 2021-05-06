@@ -136,14 +136,29 @@ main {
     position: absolute;
 }
 
-/* .box3{
-    width: 350px;
-    height: 350px;
-    top: 500px;
-    left: 1000px;
-    background-color: lavender;
-    z-index: 5;
-} */
+.box3{
+    display: flex;
+    width: 35vw;
+    height: 18vw;
+    top: -20px;
+    left: 70px;
+    background-color:#3c5a9b;
+    z-index: 3;
+    flex: content;
+    position: absolute;
+}
+
+.box4{
+    display: flex;
+    width: 35vw;
+    height: 24vh;
+    top: 10px;
+    left: 20px;
+    background-color: rgb(83, 83, 83);
+    z-index: 4;
+    flex: content;
+    position: absolute;
+}
 
 .hotel {
     padding-bottom: 3vw;
@@ -363,4 +378,8 @@ main {
 
 .delta {
     padding-top: 3.5vh;
+}
+
+.papa {
+    padding: 20px;
 }
