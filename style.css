@@ -138,24 +138,24 @@ main {
 
 .box3{
     display: flex;
-    width: 35vw;
+    width: 200px;
     height: 18vw;
     top: -20px;
-    left: 70px;
+    left: 25vw;
     background-color:#3c5a9b;
-    z-index: 3;
+    z-index: 4;
     flex: content;
     position: absolute;
 }
 
 .box4{
     display: flex;
-    width: 35vw;
-    height: 24vh;
+    width: 30vw;
+    height: 24vw;
     top: 10px;
     left: 20px;
     background-color: rgb(83, 83, 83);
-    z-index: 4;
+    z-index: 3;
     flex: content;
     position: absolute;
 }
