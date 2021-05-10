@@ -11,6 +11,9 @@ app.use(express.json());
 app.use("/assets", express.static("assets"));
 app.use(express.urlencoded({ extended: true }));
 
+// Routes for the api and htmls
+require("./routes")(app);
+
 // Lets the port listen for commands
 app.listen(PORT, function() {
     console.log("App is listening on PORT " + PORT);
