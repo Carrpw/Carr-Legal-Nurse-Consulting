@@ -141,7 +141,7 @@ main {
     width: 200px;
     height: 18vw;
     top: -20px;
-    left: 50vh;
+    left: 20vw;
     background-color:#3c5a9b;
     z-index: 4;
     flex: content;
