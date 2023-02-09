@@ -172,7 +172,7 @@ main {
 
 .india {
     padding-top: 6vw;
-    padding-bottom: 6vw;
+    padding-bottom: 3vw;
 }
 
 .kilo {
@@ -394,4 +394,8 @@ main {
 
 .beta {
     padding-bottom: 10vh;
+}
+
+.yankee {
+    padding-top: 3.5vw;
 }
