@@ -376,22 +376,47 @@
             loading="lazy">
         </div>
 
-        <!-- LinkedIn Profile Badge -->
-        <div class="credential-badge">
-          <div
-            class="badge-base LI-profile-badge"
-            data-locale="en_US"
-            data-size="medium"
-            data-theme="light"
-            data-type="HORIZONTAL"
-            data-vanity="melinda-i-carr-bsn-rn-cpn-068288203"
-            data-version="v1">
-            <a
-              class="badge-base__link LI-simple-link"
-              href="https://www.linkedin.com/in/melinda-i-carr-bsn-rn-cpn-068288203?trk=profile-badge">
-              Melinda I Carr, BSN, RN, CPN
-            </a>
-          </div>
+        <!-- LinkedIn Profile Card
+             ─────────────────────────────────────────────────────
+             The official LinkedIn badge SDK (platform.linkedin.com/badges)
+             was getting frequently blocked by ad blockers (ERR_BLOCKED_BY_CLIENT),
+             which means many visitors would see nothing or a broken widget.
+ 
+             This custom card achieves the same goal — showing Melinda's
+             LinkedIn profile prominently — using only plain HTML/CSS with
+             no third-party scripts. It is never blocked, loads instantly,
+             and looks consistent for every visitor.
+ 
+             To update: change the href, name, title, or any detail text
+             below. The Font Awesome icon (fa-linkedin) is already loaded
+             by the site's existing Font Awesome stylesheet.
+        -->
+        <div class="credential-badge reveal reveal--delay">
+          <a
+            href="https://www.linkedin.com/in/melinda-i-carr-bsn-rn-cpn-068288203/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="li-card"
+            aria-label="View Melinda Carr's LinkedIn profile (opens in new tab)">
+ 
+            <!-- LinkedIn brand icon -->
+            <div class="li-card__icon-wrap" aria-hidden="true">
+              <i class="fab fa-linkedin"></i>
+            </div>
+ 
+            <!-- Profile summary -->
+            <div class="li-card__body">
+              <p class="li-card__name">Melinda I. Carr</p>
+              <p class="li-card__title">BSN, RN, CPN, LNC</p>
+              <p class="li-card__sub">Legal Nurse Consultant · Raleigh, NC</p>
+            </div>
+ 
+            <!-- CTA label -->
+            <span class="li-card__cta">
+              View Profile <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </span>
+ 
+          </a>
         </div>
       </div>
     </div>

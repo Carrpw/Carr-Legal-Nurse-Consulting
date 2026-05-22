@@ -16,11 +16,12 @@
     10. Services Section
     11. Meet Melinda Section
     12. Credentials Section
-    13. Contact Section
-    14. Footer
-    15. Back-to-Top Button
-    16. Scroll Reveal Animation
-    17. Responsive Breakpoints
+    13. LINKEDIN PROFILE CARD
+    14. Contact Section
+    15. Footer
+    16 Back-to-Top Button
+    17. Scroll Reveal Animation
+    18. Responsive Breakpoints
   ============================================================
 */
 
@@ -809,9 +810,97 @@ address {
   border-radius: var(--radius-sm);
 }
 
+/* ============================================================
+   13. LINKEDIN PROFILE CARD
+   Custom LinkedIn card that replaces the official badge SDK widget.
+   The SDK was replaced because browser ad blockers frequently
+   block platform.linkedin.com, making the widget invisible to
+   a large portion of visitors (ERR_BLOCKED_BY_CLIENT).
+ 
+   This card uses only HTML + CSS — no external scripts — so it
+   loads instantly and displays correctly for every visitor.
+   The LinkedIn brand blue (#0A66C2) and icon are used per
+   LinkedIn's brand guidelines for "link to profile" use cases.
+============================================================ */
+ 
+/* Anchor tag styled as a card — the entire card is clickable */
+.li-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #0A66C2;        /* LinkedIn brand blue */
+  border-radius: var(--radius-md);
+  padding: 2rem 2.5rem;
+  color: var(--white);
+  text-decoration: none;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: var(--shadow-md);
+}
+ 
+.li-card:hover,
+.li-card:focus-visible {
+  background-color: #004182;        /* Darker LinkedIn blue on hover */
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  color: var(--white);
+}
+ 
+/* Large LinkedIn logo icon */
+.li-card__icon-wrap {
+  font-size: 3rem;
+  line-height: 1;
+  opacity: 0.95;
+}
+ 
+/* Profile name */
+.li-card__name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+ 
+/* Credentials line */
+.li-card__title {
+  font-size: 0.88rem;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 0.1rem;
+}
+ 
+/* Location / specialty line */
+.li-card__sub {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+ 
+/* "View Profile →" call-to-action label */
+.li-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 0.75rem;
+  width: 100%;
+  justify-content: center;
+  opacity: 0.85;
+  transition: opacity var(--transition);
+}
+.li-card:hover .li-card__cta {
+  opacity: 1;
+}
 
 /* ============================================================
-   13. CONTACT SECTION
+   14. CONTACT SECTION
    Two-column: form on left, info panel on right.
 ============================================================ */
 .contact {
@@ -937,7 +1026,7 @@ address {
 
 
 /* ============================================================
-   14. FOOTER
+   15. FOOTER
    Four-column footer with brand, links, location, contact.
 ============================================================ */
 .footer {
@@ -1026,7 +1115,7 @@ address {
 
 
 /* ============================================================
-   15. BACK-TO-TOP BUTTON
+   16. BACK-TO-TOP BUTTON
    Fixed bottom-right corner button, shown after scroll.
 ============================================================ */
 .back-to-top {
@@ -1062,7 +1151,7 @@ address {
 
 
 /* ============================================================
-   16. SCROLL REVEAL ANIMATION
+   17. SCROLL REVEAL ANIMATION
    Elements with class .reveal fade up into view when they
    enter the viewport (triggered via IntersectionObserver in script.js).
 ============================================================ */
@@ -1083,7 +1172,7 @@ address {
 
 
 /* ============================================================
-   17. RESPONSIVE BREAKPOINTS
+   18. RESPONSIVE BREAKPOINTS
    Collapse multi-column layouts at smaller viewports.
 ============================================================ */
 
