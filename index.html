@@ -1,310 +1,622 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--
+  ============================================================
+  Carr Legal Nurse Consulting, PLLC — Main Website
+  ============================================================
+  File: index.html
+  Description: Single-page website for Carr Legal Nurse Consulting.
+               Sections: Hero, About, Services, Meet Melinda, Contact, Footer.
+  Dependencies:
+    - assets/css/style.css   → All custom styles
+    - assets/js/script.js    → Scroll animations, nav behavior, form handling
+    - Google Fonts (Playfair Display + DM Sans)
+    - Font Awesome 6 (icons)
+  ============================================================
+-->
+
 <head>
-    <title>Carr Legal Nurse Consulting, PLLC</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Unkempt&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/Pictures/carIcon.png" type="image/icon type">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Carr Legal Nurse Consulting, PLLC — Expert legal nurse consulting services in Raleigh, NC. Medical record review, case merit analysis, and litigation support.">
+  <title>Carr Legal Nurse Consulting, PLLC</title>
+
+  <!-- ── Favicon ── -->
+  <link rel="icon" href="assets/Pictures/carIcon.png" type="image/png">
+
+  <!-- ── Google Fonts: Playfair Display (headings) + DM Sans (body) ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ── Font Awesome 6 (icons) ── -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- ── Custom Stylesheet ── -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <!-- navbar navbar-inverse navbar-static-top used for static hamburger menu -->
-    <nav class="navbar navbar-inverse navbar-static-top" id="charlie" role="navigation">
-        <div class="container">
-            <!-- container gives content bootstrap alignment -->
-            <div class="navbar-header row">
-                <!-- navbar-header gives header -->
-                <div class="col-sm-1"></div>
-                <div class="logo col-sm-2">
-                    <div class="row">
-                        <img src="assets/Pictures/CLNCLogo.jpg" height="70%" width="100%" class="center"
-                            alt="Carr Legal Nurse Consulting Logo">
-                    </div>
-                </div>
-                <p class="test col-sm-9">Carr Legal Nurse Consulting, PLLC</p>
-                <!-- <div class="col-sm-1"></div> -->
-                <!-- navbar-toggle collapsed for hide the content -->
-                <button type="button" class="navbar-toggle collapsed col-sm-6" data-toggle="collapse"
-                    data-target="#menu">
-                    <!-- sr-only gives feature, hides elements from all devices except screen -->
-                    <span class="sr-only">Hamburger Menu</span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <!-- icon-bar creates structure like triple equal -->
-                </button>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse row" id="menu">
-                <!--nav navbar-nav used to sets the navigation bar size( either increase or reduce) -->
-                <ul class="nav navbar-nav nav-center">
-                    <li><a class="nav-link active link" href="#about">About Us</a></li>
-                    <li><a class="nav-link active link" href="#services">Services</a></li>
-                    <li><a class="nav-link active link" href="#meet">Meet Melinda</a></li>
-                    <li><a class="nav-link active link" href="#contact">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <header class="container-fluid header3">
-        <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
-        <div class="uniform">
-            <h1 class="text-center lima">Your legal expertise.</h1>
-            <h1 class="text-center lima">Our medical knowledge.</h1>
-            <h1 class="text-center lima abc">Client Wins.</h1>
-        </div>
-        <div class="row beta">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-4">
-                <h4 class="text-center lima"> Melinda reviewed and summarized almost 2000 pages of Intensive Care records that involved one of my clients. She highlighted several key facts about the treatment my client received from injuries he sustained when a car hit him as he crossed the street. Melinda's insights will significantly simplify the treating physician's testimony, since I now understand my client's ICU treatments so much better. I highly recommend Carr Legal Nurse Consulting (and I am not an easy customer!).</h4> 
-                <h2 class="text-center lima">- Isaac Thorp J.D.</h2>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-5 yankee">
-                <h4 class="text-center lima"> Melinda, I've finally gotten through the summary of the (34,000 pages) medical record. What a masterpiece! Well worth the cost.</h4>
-                <h2 class="text-center lima">- David Pishko, J.D.</h2>
-            </div>
-            <div class="col-sm-1"></div>
-        </div>
-        <div class="row tri"></div>
-    </header>
-    <embed src="https://attorneyatlawmagazine.com/carr-legal-nursing-consulting" style="width:100%; height: 50vw;">    
-    <header class="container-fluid header1">
-        <section class="color1">
-            <main>
-                <section class="container-fluid about">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h1 class="text-center font-style" id="about">Melinda Carr</h1>
-                            <h2 class="text-center font-style">BSN, RN, CPN, LNC
-                            </h2>
-                            <br>
-                            <p class="font-sytle">Melinda Carr is the primary consultant and owner of Carr Legal Nurse
-                                Consulting.</p>
-                            <p class="font-style">She has over 35 years experience in ICU, Critical Care Transport and
-                                Procedural Sedation with an emphasis on Pediatrics.
-                                She holds certification in Pediatrics and has historically held a certificate in Trauma
-                                and certifications Neonatal Intensive Care. Her professional passion has been caring and advocating for
-                                her patients. As a Legal Nurse Consultant she will bring her experience and knowledge of
-                                medical records, medical/nursing dynamics and clinical scenarios to your legal team
-                                whether plaintiff or defendant. As a member of the American Association of Legal Nurse
-                                Consultants, she has a multitude of resources to support your legal team.
-                            </p>
-                        </div>
-                        <div class="col-sm-6 delta">
-                            <img src="assets/Pictures/Melinda.JPG" width="50%" height="75%"
-                                alt="Melinda Carr in professional attire" class="image1">
-                            <div class="box1"></div>
-                            <div class="box2"></div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-        </section>
-    </header>
-    <header class="container-fluid header3">
-        <main>
-            <section>
-                <h1 class="text-center color6 font-header" id="services">Services</h1>
-                <div class="row color6 hotel">
-                    <div class="col-sm-3 services">
-                        <div class="services1">
-                            <i class="fas fa-search fa-5x" id="search"></i>
-                            <p class="services2 text-center font-style">Analyze cases for merit</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 services">
-                        <div class="services1">
-                            <i class="fas fa-folder-open fa-5x" id="folder"></i>
-                            <p class="services2 text-center font-style">Medical Records review- Expert review and
-                                analysis of the medical records, including investigation for compete records/documents.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 services">
-                        <div class="services1">
-                            <i class="fas fa-notes-medical fa-5x" id="notes"></i>
-                            <p class="services2 text-center font-style">Pain and Suffereing reports/ Fact witness.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 services">
-                        <div class="services1">
-                            <i class="fas fa-hospital-user fa-5x" id="hospital"></i>
-                            <p class="services2 text-center font-style">Assist with Medical Cost Projections</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="row color6 golf">
-                    <div class="col-sm-3 services">
-                        <div class="services1">
-                            <i class="far fa-calendar-alt fa-5x" id="calendar"></i>
-                            <p class="services2 text-center font-style">Event timeline, Chronologies, Summaries,
-                                analysis of
-                                breach in Standard of Care</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 services">
-                        <div class="services1">
-                            <i class="fas fa-book fa-5x" id="book"></i>
-                            <p class="services2 text-center font-style">Research of Medical Literature</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 services">
-                        <div class="services1">
-                            <i class="fas fa-university fa-5x" id="university"></i>
-                            <p class="services2 text-center font-style">Provide education of medical terminology,
-                                bedside
-                                critical decision interpretation and
-                                clarification
-                                of
-                                medical/nursing issues to support Legal team</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 services">
-                        <div class="services1">
-                            <i class="fas fa-gavel fa-5x" id="gavel"></i>
-                            <p class="services2 text-center font-style">Personal Injury - assessment of nature, extent
-                                and permanency of damages, future medical problems and potential expenses.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </header>
-    <header class="container-fluid header2">
-        <main class="color1">
-            <section class="color1 india">
-                <div class="row">
-                    <div class="col-sm-6 papa">
-                        <img src="assets/Pictures/MelindaAndKi.JPG" class="image2" width="70%" height="40%"
-                            alt="Melinda Carr with her dog">
-                            <div class="box3"></div>
-                            <div class="box4"></div>
-                    </div>
-                    <div class="col-sm-6" id="meet">
-                        <h1 class="meet1 font-style">Melinda I Carr</h1>
-                        <p class="font-style">
-                            Melinda lives in Raleigh with her husband, Joe. In her free time she enjoys family, travel, gardening, reading and playing with her own
-                            small animal kingdom.
-                        </p>
-                        <div class="col-sm-6">
-                            <img src="assets/Pictures/Cat1.JPG" class="november" width="90%" height="80%" alt="Melinda's cat Poppy">
-                        </div>
-                        <div class="col-sm-6">    
-                            <img src="assets/Pictures/Cat2.JPG" class="yankee image2" width="90%" height="80%" alt="Melinda's cat Chia">
-                        </div>   
-                    </div>
-                </div>
-            </section>
-        </main>
-    </header>
-    <header class="container-fluid header3">
-        <section class="color6 kilo">
-            <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-6 juliet">
-                    <img src="assets/Pictures/AALNC.jpg" class="" id="contact"
-                        alt="American Association of Legal Nurse consultants badge">
-                </div>
-                <div class="col-sm-4 juliet zulu">
-                    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark"
-                        data-type="VERTICAL" data-vanity="melinda-i-carr-bsn-rn-cpn-lnc-068288203" data-version="v1"><a
-                            class="badge-base__link LI-simple-link lima"
-                            href="https://www.linkedin.com/in/melinda-i-carr-bsn-rn-cpn-lnc-068288203?trk=profile-badge">Melinda
-                            I Carr, BSN, RN, CPN, LNC</a></div>
 
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-            <div class="row">
-                <div class="col-sm-8 xray badge ">
-                    <form action="mailto: carrlegalnurse.peds@gmail.com" method="POST" enctype="multipart/form-data"
-                        name="EmailForm">
-                        <h2 class="text-center font-style">Contact Us!</h2>
-                        <input type="text" class="form-control" placeholder="Enter Your Name" name="Contact-name">
-                        <div class="mb-3 romeo">
-                            <input type="email" class="form-control" placeholder="Enter a Valid Email Address"
-                                name="contact-Email">
-                        </div>
-                        <div class="romeo">
-                            <textarea class="form-control" placeholder="What's your message?"
-                                name="Contact-Message"></textarea>
-                        </div>
-                        <button type="submit" value="Submit" class="btn btn-primary btn-lg">Send</button>
-                    </form>
-                </div>
-                <!-- <form method="post" action="index.php">
-                        <textarea name="message"></textarea>
-                        <input type="submit"> -->
-                <!-- <form action="mailto:contact@yourdomain.com"
-                        method="POST"
-                        enctype="multipart/form-data"
-                        name="EmailForm">
-                            Name:<br>
-                            <input type="text" size="19" name="Contact-Name"><br><br>
-                            Email:<br>
-                            <input type="email" name="Contact-Email"><br><br> 
-                            Message:<br> 
-                            <textarea name="Contact-Message" rows="6″ cols="20″>
-                            </textarea><br><br> 
-                            <button type="submit" value="Submit">Send</button>
-                        </form> -->
-            </div>
-            </div>
-        </section>
-    </header>
-    <footer class="color1">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-4 text-center mike">
-                    <img src="assets/Pictures/CLNCLogo.jpg" height="70%" width="100%" class="center"
-                        alt="Carr Legal Nurse Consulting Logo">
-                </div>
-                <div class="col-sm-4 text-center november">
-                    <h2>Location</h2>
-                    <p class="oscar">Raleigh, NC 27615</p>
-                </div>
-                <div class="col-sm-4 text-center november">
-                    <h2>Contact</h2>
-                    <p class="oscar"><i class="fas fa-phone fa-2x"></i>(919) 633-2808</p>
-                    <p class="oscar"><i class="fas fa-envelope-square fa-2x"></i>carrlegalnurse.peds@gmail.com</p>
-                </div>
-            </div>
+  <!-- ============================================================
+       NAVIGATION BAR
+       Fixed top navbar with logo, site title, and anchor links.
+       Collapses to a hamburger menu on mobile.
+  ============================================================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+
+      <!-- Logo + Brand Name -->
+      <a class="nav-brand" href="#hero" aria-label="Carr Legal Nurse Consulting home">
+        <img src="assets/Pictures/CLNCLogo.jpg" alt="Carr Legal Nurse Consulting Logo" class="nav-logo">
+        <span class="nav-title">Carr Legal Nurse Consulting, PLLC</span>
+      </a>
+
+      <!-- Hamburger toggle (mobile) -->
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="#about"    class="nav-link">About Us</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#meet"     class="nav-link">Meet Melinda</a></li>
+        <li><a href="#contact"  class="nav-link nav-link--cta">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO SECTION
+       Full-viewport hero with headline, tagline, and testimonials.
+       Background: deep navy with a subtle diagonal mesh pattern.
+  ============================================================ -->
+  <section class="hero" id="hero" aria-label="Hero section">
+
+    <!-- Decorative background mesh (CSS-only) -->
+    <div class="hero-bg" aria-hidden="true"></div>
+
+    <!-- Main headline block -->
+    <div class="hero-content">
+      <p class="hero-eyebrow">Legal Nurse Consulting · Raleigh, NC</p>
+      <h1 class="hero-headline">
+        Your Legal Expertise.<br>
+        <em>Our Medical Knowledge.</em>
+      </h1>
+      <p class="hero-tagline">Client Wins.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn--primary">Our Services</a>
+        <a href="#contact"  class="btn btn--outline">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- Scroll-down indicator -->
+    <a href="#testimonials" class="hero-scroll" aria-label="Scroll to testimonials">
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+    </a>
+  </section>
+
+
+  <!-- ============================================================
+       TESTIMONIALS SECTION
+       Two client testimonials displayed as quote cards.
+  ============================================================ -->
+  <section class="testimonials" id="testimonials" aria-label="Client testimonials">
+    <div class="section-container">
+
+      <div class="testimonial-grid">
+
+        <!-- Testimonial 1 — Isaac Thorp -->
+        <blockquote class="testimonial-card reveal">
+          <i class="fas fa-quote-left testimonial-icon" aria-hidden="true"></i>
+          <p class="testimonial-text">
+            Melinda reviewed and summarized almost 2,000 pages of Intensive Care records that involved one
+            of my clients. She highlighted several key facts about the treatment my client received from
+            injuries he sustained when a car hit him as he crossed the street. Melinda's insights will
+            significantly simplify the treating physician's testimony, since I now understand my client's
+            ICU treatments so much better. I highly recommend Carr Legal Nurse Consulting — and I am not
+            an easy customer!
+          </p>
+          <footer class="testimonial-attribution">
+            <span class="testimonial-name">Isaac Thorp, J.D.</span>
+          </footer>
+        </blockquote>
+
+        <!-- Testimonial 2 — David Pishko -->
+        <blockquote class="testimonial-card reveal reveal--delay">
+          <i class="fas fa-quote-left testimonial-icon" aria-hidden="true"></i>
+          <p class="testimonial-text">
+            Melinda, I've finally gotten through the summary of the 34,000-page medical record.
+            What a masterpiece! Well worth the cost.
+          </p>
+          <footer class="testimonial-attribution">
+            <span class="testimonial-name">David Pishko, J.D.</span>
+          </footer>
+        </blockquote>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PRESS / MEDIA EMBED SECTION
+       Embedded article from Attorney at Law Magazine.
+  ============================================================ -->
+  <section class="press-embed" aria-label="Press feature">
+    <div class="section-container">
+      <p class="section-eyebrow text-center">As Featured In</p>
+      <h2 class="section-title text-center">Attorney at Law Magazine</h2>
+      <div class="embed-wrapper">
+        <iframe
+          src="https://attorneyatlawmagazine.com/carr-legal-nursing-consulting"
+          title="Carr Legal Nurse Consulting featured in Attorney at Law Magazine"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT SECTION
+       Bio card for Melinda Carr with credentials and headshot.
+  ============================================================ -->
+  <section class="about" id="about" aria-label="About Melinda Carr">
+    <div class="section-container">
+
+      <div class="about-grid">
+
+        <!-- Bio copy -->
+        <div class="about-copy reveal">
+          <p class="section-eyebrow">About</p>
+          <h2 class="section-title">Melinda Carr</h2>
+          <p class="about-credentials">BSN, RN, CPN</p>
+          <p class="about-body">
+            Melinda Carr is the primary consultant and owner of Carr Legal Nurse Consulting.
+          </p>
+          <p class="about-body">
+            She has over 39 years of experience in ICU, Critical Care Transport, and Procedural Sedation
+            with an emphasis on Pediatrics. She holds a certification in Pediatrics and historically has held certifications in Neonatal Intensive Care and a certificate in Trauma.
+          </p>
+          <p class="about-body">
+            Her professional passion has been caring and advocating for her patients. As a Legal Nurse
+            Consultant she brings her experience and knowledge of medical records, medical/nursing dynamics,
+            and clinical scenarios to your legal team — whether plaintiff or defendant. As a member of the
+            American Association of Legal Nurse Consultants, she has a multitude of resources to support
+            your legal team.
+          </p>
+
+          <!-- Credential badges -->
+          <ul class="credential-list" aria-label="Certifications and memberships">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> 39+ Years Clinical Experience</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Certified Pediatric Nurse (CPN)</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Legal Nurse Consultant (LNC)</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> AALNC Member</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Audit Trail Analyst</li>
+          </ul>
         </div>
-    </footer>
+
+        <!-- Headshot with decorative frame -->
+        <div class="about-image-wrap reveal reveal--delay">
+          <div class="about-image-frame" aria-hidden="true"></div>
+          <img
+            src="assets/Pictures/Melinda.JPG"
+            alt="Melinda Carr, BSN RN CPN LNC, in professional attire"
+            class="about-image"
+            loading="lazy">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICES SECTION
+       Eight service cards displayed in a responsive grid.
+  ============================================================ -->
+  <section class="services" id="services" aria-label="Services offered">
+    <div class="section-container">
+
+      <p class="section-eyebrow text-center">What We Do</p>
+      <h2 class="section-title text-center">Services</h2>
+      <p class="services-intro text-center">
+        Comprehensive legal nurse consulting from case screening through trial support.
+      </p>
+
+      <div class="services-grid">
+
+        <!-- Service Card 1 -->
+        <article class="service-card reveal" aria-label="Analyze cases for merit">
+          <div class="service-icon-wrap">
+            <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-title">Case Merit Analysis</h3>
+          <p class="service-body">Analyze cases to determine viability and identify strengths before litigation.</p>
+        </article>
+
+        <!-- Service Card 2 -->
+        <article class="service-card reveal" aria-label="Medical records review">
+          <div class="service-icon-wrap">
+            <i class="fas fa-folder-open" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-title">Medical Records Review</h3>
+          <p class="service-body">Expert review and analysis of medical records, including investigation for complete records and documents.</p>
+        </article>
+
+        <!-- Service Card 3 -->
+        <article class="service-card reveal" aria-label="Pain and suffering reports">
+          <div class="service-icon-wrap">
+            <i class="fas fa-notes-medical" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-title">Pain &amp; Suffering Reports</h3>
+          <p class="service-body">Detailed pain and suffering reports and fact witness services to support your case.</p>
+        </article>
+
+        <!-- Service Card 4 -->
+        <article class="service-card reveal" aria-label="Medical cost projections">
+          <div class="service-icon-wrap">
+            <i class="fas fa-hospital-user" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-title">Medical Cost Projections</h3>
+          <p class="service-body">Assist with projecting future medical costs accurately for your client's needs.</p>
+        </article>
+
+        <!-- Service Card 5 -->
+        <article class="service-card reveal" aria-label="Timeline preparation">
+          <div class="service-icon-wrap">
+            <i class="fas fa-calendar-days" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-title">Timeline Preparation</h3>
+          <p class="service-body">Precise chronological organization of medical events to support narrative clarity at trial.</p>
+        </article>
+
+        <!-- Service Card 6 -->
+        <article class="service-card reveal" aria-label="Literature research">
+          <div class="service-icon-wrap">
+            <i class="fas fa-book-open" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-title">Audit Trail Analysis</h3>
+          <p class="service-body">Motions to compel for production, analysis and complete investigative reports.</p>
+        </article>
+
+        <!-- Service Card 7 -->
+        <article class="service-card reveal" aria-label="Expert witness locating">
+          <div class="service-icon-wrap">
+            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-title">Expert Witness Locating</h3>
+          <p class="service-body">Identify and vet qualified medical expert witnesses suited to your specific case needs.</p>
+        </article>
+
+        <!-- Service Card 8 -->
+        <article class="service-card reveal" aria-label="Personal injury assessment">
+          <div class="service-icon-wrap">
+            <i class="fas fa-gavel" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-title">Personal Injury Assessment</h3>
+          <p class="service-body">Assessment of the nature, extent, and permanency of damages — including future medical problems and potential expenses.</p>
+        </article>
+
+      </div><!-- /.services-grid -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       MEET MELINDA SECTION
+       Personal section with lifestyle photos and brief personal bio.
+  ============================================================ -->
+  <section class="meet" id="meet" aria-label="Meet Melinda">
+    <div class="section-container">
+
+      <div class="meet-grid">
+
+        <!-- Personal bio copy -->
+        <div class="meet-copy reveal">
+          <p class="section-eyebrow">The Person Behind the Practice</p>
+          <h2 class="section-title">Melinda I. Carr</h2>
+          <p class="meet-body">
+            Melinda lives in Raleigh with her husband, Joe. In her free time she enjoys family, travel,
+            gardening, pets, reading, and spending time with her grandchildren.
+          </p>
+
+          <!-- Pet photos row -->
+          <div class="meet-photos">
+            <figure class="meet-photo-wrap">
+              <img src="assets/Pictures/Cat1.JPG" alt="Melinda's cat Poppy" loading="lazy" class="meet-photo">
+              <figcaption>Poppy</figcaption>
+            </figure>
+            <figure class="meet-photo-wrap">
+              <img src="assets/Pictures/Cat2.JPG" alt="Melinda's cat Chia" loading="lazy" class="meet-photo">
+              <figcaption>Chia</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Lifestyle image with decorative frame -->
+        <div class="meet-image-wrap reveal reveal--delay">
+          <div class="meet-image-frame" aria-hidden="true"></div>
+          <img
+            src="assets/Pictures/MelindaAndKi.JPG"
+            alt="Melinda Carr with her dog"
+            class="meet-image"
+            loading="lazy">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CREDENTIALS SECTION
+       AALNC badge + LinkedIn profile badge side by side.
+  ============================================================ -->
+  <section class="credentials" aria-label="Professional credentials and memberships">
+    <div class="section-container">
+      <p class="section-eyebrow text-center">Professional Affiliations</p>
+      <h2 class="section-title text-center">Credentials &amp; Memberships</h2>
+
+      <div class="credentials-grid">
+
+        <!-- AALNC Badge -->
+        <div class="credential-badge reveal">
+          <img
+            src="assets/Pictures/AALNC.jpg"
+            alt="American Association of Legal Nurse Consultants member badge"
+            class="aalnc-badge"
+            loading="lazy">
+        </div>
+
+        <!-- LinkedIn Profile Badge -->
+        <div class="credential-badge">
+          <div
+            class="badge-base LI-profile-badge"
+            data-locale="en_US"
+            data-size="medium"
+            data-theme="light"
+            data-type="HORIZONTAL"
+            data-vanity="melinda-i-carr-bsn-rn-cpn-068288203"
+            data-version="v1">
+            <a
+              class="badge-base__link LI-simple-link"
+              href="https://www.linkedin.com/in/melinda-i-carr-bsn-rn-cpn-068288203?trk=profile-badge">
+              Melinda I Carr, BSN, RN, CPN
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT SECTION
+       Contact form + quick-reference contact info panel.
+  ============================================================ -->
+  <section class="contact" id="contact" aria-label="Contact us">
+    <div class="section-container">
+
+      <p class="section-eyebrow text-center">Reach Out</p>
+      <h2 class="section-title text-center">Contact Us</h2>
+
+      <div class="contact-grid">
+
+        <!-- ── Contact Form ── -->
+        <div class="contact-form-wrap reveal">
+          <!--
+            NETLIFY FORMS
+            ─────────────────────────────────────────────────────
+            How it works:
+              1. Netlify scans this file at deploy time and detects
+                 the "data-netlify" attribute on the <form> tag.
+              2. It registers the form under the name "contact" in
+                 your Netlify dashboard (Site → Forms).
+              3. When a visitor submits the form, Netlify captures
+                 the data and emails it to you — no server code needed.
+ 
+            To enable email notifications after your first deploy:
+              Netlify Dashboard → Site → Forms → contact
+              → "Form notifications" → "Add notification"
+              → "Email notification" → enter your email address.
+ 
+            Spam protection:
+              The hidden "bot-field" input below is a honeypot.
+              Real users never see or fill it; spam bots do.
+              Netlify silently discards any submission where it
+              has a value.
+ 
+            If the form ever stops working:
+              Check Site → Forms in the Netlify dashboard to confirm
+              the form was detected. If not, redeploy the site.
+          -->
+          <form
+            class="contact-form"
+            id="contactForm"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            novalidate
+            aria-label="Contact form">
+ 
+            <!-- Honeypot field: hidden from real users, catches spam bots -->
+            <p style="display:none">
+              <label>Don't fill this out: <input name="bot-field"></label>
+            </p>
+
+            <!-- Name field -->
+            <div class="form-group">
+              <label for="contactName" class="form-label">Your Name</label>
+              <input
+                type="text"
+                id="contactName"
+                name="Contact-Name"
+                class="form-control"
+                placeholder="Jane Smith"
+                required
+                aria-required="true">
+            </div>
+
+            <!-- Email field -->
+            <div class="form-group">
+              <label for="contactEmail" class="form-label">Email Address</label>
+              <input
+                type="email"
+                id="contactEmail"
+                name="Contact-Email"
+                class="form-control"
+                placeholder="jane@lawfirm.com"
+                required
+                aria-required="true">
+            </div>
+
+            <!-- Message field -->
+            <div class="form-group">
+              <label for="contactMessage" class="form-label">Message</label>
+              <textarea
+                id="contactMessage"
+                name="Contact-Message"
+                class="form-control form-textarea"
+                placeholder="Tell us about your case or inquiry…"
+                rows="5"
+                required
+                aria-required="true"></textarea>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn--primary btn--full">
+              Send Message <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            </button>
+
+          </form>
+        </div><!-- /.contact-form-wrap -->
+
+        <!-- ── Contact Info Panel ── -->
+        <aside class="contact-info reveal reveal--delay" aria-label="Contact information">
+          <h3 class="contact-info-title">Get in Touch</h3>
+
+          <ul class="contact-info-list" aria-label="Contact details">
+            <li class="contact-info-item">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <div>
+                <strong>Location</strong>
+                <p>Raleigh, NC 27615</p>
+              </div>
+            </li>
+            <li class="contact-info-item">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <div>
+                <strong>Phone</strong>
+                <p><a href="tel:+19196332808">(919) 633-2808</a></p>
+              </div>
+            </li>
+            <li class="contact-info-item">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <div>
+                <strong>Email</strong>
+                <p><a href="mailto:carrlegalnurse.peds@gmail.com">melinda@carrlegalnurse.com</a></p>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Quick response note -->
+          <p class="contact-info-note">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            We typically respond within one business day.
+          </p>
+        </aside>
+
+      </div><!-- /.contact-grid -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       Logo, quick links, location, and contact info.
+  ============================================================ -->
+  <footer class="footer" role="contentinfo" aria-label="Site footer">
+    <div class="footer-container">
+
+      <!-- Footer brand column -->
+      <div class="footer-col">
+        <img src="assets/Pictures/CLNCLogo.jpg" alt="Carr Legal Nurse Consulting Logo" class="footer-logo">
+        <p class="footer-tagline">Bridging medicine and the law.</p>
+      </div>
+
+      <!-- Quick links column -->
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#meet">Meet Melinda</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Location column -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Location</h4>
+        <address class="footer-address">
+          Raleigh, NC 27615
+        </address>
+      </div>
+
+      <!-- Contact column -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="footer-contact" role="list">
+          <li>
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <a href="tel:+19196332808">(919) 633-2808</a>
+          </li>
+          <li>
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:carrlegalnurse.peds@gmail.com">melinda@carrlegalnurse.com</a>
+          </li>
+        </ul>
+      </div>
+
+    </div><!-- /.footer-container -->
+
+    <!-- Bottom bar: copyright -->
+    <div class="footer-bottom">
+      <p>&copy; <span id="currentYear"></span> Carr Legal Nurse Consulting, PLLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       BACK-TO-TOP BUTTON
+       Appears after the user scrolls down 300px.
+       Controlled in script.js via the scrollFunction().
+  ============================================================ -->
+  <button id="backToTop" class="back-to-top" onclick="topFunction()" aria-label="Back to top" title="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+
+  <!-- ============================================================
+       SCRIPTS
+       Loaded at the end of <body> for performance.
+       LinkedIn badge SDK loaded async/defer so it does not block rendering.
+  ============================================================ -->
+
+  <!-- LinkedIn Profile Badge SDK -->
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+  <!-- Site JavaScript -->
+  <script src="script.js"></script>
+
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://kit.fontawesome.com/1850968d1c.js" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-<script>
-    var mybutton = document.getElementById("topBtn");
-
-    // When the user scrolls down from the top of the document, show the button
-    window.onscroll = function () {
-        scrollFunction()
-    };
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        }
-
-        else {
-            mybutton.style.display = "none";
-        }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, Opera
-    }
-</script>
-
 </html>

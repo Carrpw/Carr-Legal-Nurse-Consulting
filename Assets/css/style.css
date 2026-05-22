@@ -1,401 +1,1197 @@
-.test {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 6vh;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 0px;
-    margin-top: 1.5%;
+/*
+  ============================================================
+  Carr Legal Nurse Consulting, PLLC — Stylesheet
+  ============================================================
+  File: assets/css/style.css
+  Description: Full site styles. Organized as follows:
+    1.  CSS Custom Properties (design tokens)
+    2.  Reset & Base
+    3.  Typography
+    4.  Utility Classes
+    5.  Navigation
+    6.  Hero Section
+    7.  Testimonials Section
+    8.  Press Embed Section
+    9.  About Section
+    10. Services Section
+    11. Meet Melinda Section
+    12. Credentials Section
+    13. Contact Section
+    14. Footer
+    15. Back-to-Top Button
+    16. Scroll Reveal Animation
+    17. Responsive Breakpoints
+  ============================================================
+*/
+
+
+/* ============================================================
+   1. CSS CUSTOM PROPERTIES (Design Tokens)
+   All colors, fonts, spacing, shadows in one place.
+   Edit these values to retheme the entire site.
+============================================================ */
+:root {
+  /* — Brand Colors — */
+  --navy:       #1a2744;      /* Primary dark (navy blue) */
+  --navy-light: #243259;      /* Lighter navy for hover states */
+  --gold:       #c9a84c;      /* Accent gold */
+  --gold-light: #e0c074;      /* Lighter gold for hover */
+  --cream:      #f8f5ef;      /* Warm off-white background */
+  --white:      #ffffff;
+  --gray-100:   #f4f4f4;
+  --gray-200:   #e8e8e8;
+  --gray-500:   #8a8a8a;
+  --gray-700:   #444444;
+  --gray-900:   #1a1a1a;
+
+  /* — Typography — */
+  --font-display: 'Playfair Display', Georgia, serif;   /* Headings */
+  --font-body:    'DM Sans', system-ui, sans-serif;     /* Body text */
+
+  /* — Spacing — */
+  --section-py: 6rem;         /* Default vertical padding for sections */
+  --container-max: 1180px;    /* Max content width */
+  --container-px: 1.5rem;     /* Horizontal padding on container */
+
+  /* — Shadows — */
+  --shadow-sm:  0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md:  0 8px 30px rgba(0,0,0,0.12);
+  --shadow-lg:  0 20px 60px rgba(0,0,0,0.18);
+
+  /* — Transitions — */
+  --transition: 0.28s ease;
+
+  /* — Border Radius — */
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
 }
 
-.font-style {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 500;
-    color: black;
+
+/* ============================================================
+   2. RESET & BASE
+   Normalize cross-browser differences, set box model.
+============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.font-header {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 800;
-    font-size: 7vh;
-    color: white;
-    padding-top: 4vh;
+html {
+  scroll-behavior: smooth;            /* Smooth anchor scrolling */
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
 
-.logo {
-    margin-top: 1%;
-    padding-right: 0px;
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--gray-900);
+  background-color: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;                 /* Prevent horizontal scroll */
 }
 
-.no-gutters {
-    padding-right: 0px;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-.header1 {
-    /* background-image: url(Background.JPG); */
-    z-index: 1;
-    background-color: #f4f9f9;
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
 }
 
-.header2 {
-    z-index: 1;
-    background-color: #f4f9f9;
+ul, ol {
+  list-style: none;
 }
 
-.header3 {
-    z-index: 1;
-    background-color:#3c5a9b
+address {
+  font-style: normal;
+}
+
+/* Focus-visible outline for keyboard accessibility */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 3px;
 }
 
 
+/* ============================================================
+   3. TYPOGRAPHY
+   Display headings, section titles, eyebrow labels, body text.
+============================================================ */
 
-main {
-    margin-left: 10%;
-    margin-right: 10%;
+/* Section eyebrow label (small uppercase text above heading) */
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
 }
 
-#topBtn {
-    display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: black; /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 10px; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
+/* Section title (large heading under eyebrow) */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);   /* Fluid type */
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
 }
 
-#topBtn:hover {
-    background-color: red;
+/* Override title color inside dark sections */
+.services .section-title,
+.credentials .section-title {
+  color: var(--white);
 }
 
-.nav-center{
-    float: none;
-    position:relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%);
+/* Center utility */
+.text-center {
+  text-align: center;
 }
 
-#charlie{
-    margin-bottom: 0px;
+
+/* ============================================================
+   4. UTILITY CLASSES
+   Reusable helpers for layout and buttons.
+============================================================ */
+
+/* Generic section container — limits width, centers content */
+.section-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--section-py) var(--container-px);
 }
 
-.color1 {
-    background-color: #f4f9f9;
-    
+/* Button base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 50px;             /* Pill shape */
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: center;
+  white-space: nowrap;
 }
 
-.color6 {
-    background-color:#3c5a9b;
+/* Primary filled button (gold) */
+.btn--primary {
+  background-color: var(--gold);
+  color: var(--navy);
+  border-color: var(--gold);
+}
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background-color: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201,168,76,0.35);
 }
 
+/* Outline / ghost button */
+.btn--outline {
+  background-color: transparent;
+  color: var(--white);
+  border-color: rgba(255,255,255,0.6);
+}
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  background-color: rgba(255,255,255,0.12);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Full-width button modifier */
+.btn--full {
+  width: 100%;
+  justify-content: center;
+}
+
+
+/* ============================================================
+   5. NAVIGATION
+   Fixed top bar with logo, brand name, and nav links.
+   Transitions to a condensed style on scroll (via JS class).
+============================================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color var(--transition), box-shadow var(--transition), padding var(--transition);
+  padding: 1.1rem 0;
+}
+
+/* Scrolled state — added by script.js when page is scrolled */
+.navbar.scrolled {
+  background-color: var(--navy);
+  box-shadow: var(--shadow-md);
+  padding: 0.65rem 0;
+}
+
+.nav-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Brand: logo + site title */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.nav-logo {
+  height: 52px;
+  width: auto;
+  border-radius: var(--radius-sm);
+}
+
+.nav-title {
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  max-width: 280px;
+}
+
+/* Desktop nav links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  padding: 0.45rem 0.9rem;
+  border-radius: 50px;
+  transition: all var(--transition);
+}
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--white);
+  background-color: rgba(255,255,255,0.12);
+}
+
+/* CTA nav link styled as a small button */
+.nav-link--cta {
+  background-color: var(--gold);
+  color: var(--navy) !important;
+  font-weight: 600;
+}
+.nav-link--cta:hover,
+.nav-link--cta:focus-visible {
+  background-color: var(--gold-light);
+  color: var(--navy) !important;
+}
+
+/* Hamburger toggle (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  background-color: var(--white);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+/* Hamburger → X animation when menu is open */
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* ============================================================
+   6. HERO SECTION
+   Full-viewport dark navy hero with animated headline.
+============================================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 6rem var(--container-px) 4rem;
+}
+
+/* Decorative diagonal mesh / grid background */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  /* Radial vignette on top of grid */
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+/* Small label above main headline */
+.hero-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.2s forwards ease-out;
+}
+
+/* Main H1 */
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.12;
+  margin-bottom: 0.6rem;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.4s forwards ease-out;
+}
+
+/* Italic emphasis within headline */
+.hero-headline em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+/* Large tagline */
+.hero-tagline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 7vw, 5rem);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.6s forwards ease-out;
+}
+
+/* Hero CTA buttons row */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.8s forwards ease-out;
+}
+
+/* Animated down-chevron scroll indicator */
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.45);
+  font-size: 1.2rem;
+  z-index: 2;
+  animation: bounce 2s infinite;
+  transition: color var(--transition);
+}
+.hero-scroll:hover {
+  color: var(--gold);
+}
+
+/* Keyframes */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+
+/* ============================================================
+   7. TESTIMONIALS SECTION
+   Two quote cards on a light cream background.
+============================================================ */
+.testimonials {
+  background-color: var(--cream);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+  border-top: 4px solid var(--gold);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.testimonial-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.testimonial-icon {
+  color: var(--gold);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  color: var(--gray-700);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-attribution {
+  border-top: 1px solid var(--gray-200);
+  padding-top: 1rem;
+}
+
+.testimonial-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--navy);
+}
+
+
+/* ============================================================
+   8. PRESS EMBED SECTION
+   Attorney at Law Magazine iframe embed.
+============================================================ */
+.press-embed {
+  background-color: var(--white);
+}
+
+.press-embed .section-eyebrow {
+  display: block;
+}
+
+.embed-wrapper {
+  margin-top: 2rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+}
+
+.embed-wrapper iframe {
+  width: 100%;
+  height: 55vw;       /* Responsive height relative to viewport width */
+  max-height: 700px;
+  min-height: 380px;
+  border: none;
+  display: block;
+}
+
+
+/* ============================================================
+   9. ABOUT SECTION
+   Two-column layout: bio text left, portrait right.
+============================================================ */
 .about {
-    background-color: #f4f9f9;
-    padding: 5vh;
-    z-index: 2;
+  background-color: var(--cream);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-copy {
+  /* Left column */
+}
+
+.about-credentials {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-top: -0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-body {
+  color: var(--gray-700);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Credential bullet list */
+.credential-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.credential-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 500;
+  color: var(--navy);
+  font-size: 0.95rem;
+}
+.credential-list li i {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* Portrait image with decorative layered frame */
+.about-image-wrap {
+  position: relative;
+}
+
+.about-image-frame {
+  position: absolute;
+  /* Navy square offset behind the photo */
+  top: -20px;
+  left: -20px;
+  width: 80%;
+  height: 80%;
+  background-color: var(--navy);
+  border-radius: var(--radius-md);
+  z-index: 0;
+}
+
+.about-image {
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  margin-left: auto;             /* Shift right so the frame peeks out on left */
+}
+
+
+/* ============================================================
+   10. SERVICES SECTION
+   Dark navy background, 4-column responsive card grid.
+============================================================ */
+.services {
+  background-color: var(--navy);
+}
+
+.services .section-eyebrow {
+  display: block;
+  color: var(--gold);
+}
+
+.services-intro {
+  color: rgba(255,255,255,0.65);
+  max-width: 560px;
+  margin: 0 auto 3rem;
+  font-size: 1rem;
+}
+
+/* 4-up grid, collapses to 2 then 1 at narrower widths */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.service-card {
+  background-color: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: background-color var(--transition), transform var(--transition), border-color var(--transition);
+}
+.service-card:hover {
+  background-color: rgba(255,255,255,0.11);
+  border-color: var(--gold);
+  transform: translateY(-5px);
+}
+
+.service-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(201,168,76,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-size: 1.5rem;
+  color: var(--gold);
+  transition: background-color var(--transition);
+}
+.service-card:hover .service-icon-wrap {
+  background-color: rgba(201,168,76,0.3);
+}
+
+.service-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+
+.service-body {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.65;
+}
+
+
+/* ============================================================
+   11. MEET MELINDA SECTION
+   Personal section: copy + pet photos on left, lifestyle photo on right.
+============================================================ */
+.meet {
+  background-color: var(--cream);
+}
+
+.meet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.meet-body {
+  color: var(--gray-700);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Pet photo thumbnails */
+.meet-photos {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.meet-photo-wrap {
+  flex: 1;
+  text-align: center;
+}
+
+.meet-photo {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.meet-photo:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-md);
+}
+
+.meet-photo-wrap figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--gray-500);
+  font-style: italic;
+}
+
+/* Lifestyle image with decorative frame (mirrors About section) */
+.meet-image-wrap {
+  position: relative;
+}
+
+.meet-image-frame {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 80%;
+  height: 80%;
+  background-color: var(--navy);
+  border-radius: var(--radius-md);
+  z-index: 0;
+}
+
+.meet-image {
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* ============================================================
+   12. CREDENTIALS SECTION
+   AALNC badge + LinkedIn profile badge on navy background.
+============================================================ */
+.credentials {
+  background-color: var(--navy);
+  padding: 5rem 0;
+}
+
+.credentials .section-title {
+  color: var(--white);
+}
+
+.credentials-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.credential-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+}
+
+.aalnc-badge {
+  width: 100%;
+  max-width: 600px;
+  border-radius: var(--radius-sm);
+}
+
+
+/* ============================================================
+   13. CONTACT SECTION
+   Two-column: form on left, info panel on right.
+============================================================ */
+.contact {
+  background-color: var(--white);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+/* ── Form Styles ── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--gray-900);
+  background-color: var(--gray-100);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.form-control:focus {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(26,39,68,0.12);
+  background-color: var(--white);
+}
+.form-control::placeholder {
+  color: var(--gray-500);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+/* ── Info Panel ── */
+.contact-info {
+  background-color: var(--navy);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  color: var(--white);
+}
+
+.contact-info-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 1.75rem;
+  color: var(--gold);
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.contact-info-item i {
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+.contact-info-item strong {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.2rem;
+}
+.contact-info-item p,
+.contact-info-item a {
+  color: var(--white);
+  font-size: 0.95rem;
+}
+.contact-info-item a:hover {
+  color: var(--gold);
+}
+
+.contact-info-note {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 1.5rem;
+}
+.contact-info-note i {
+  color: var(--gold);
+}
+
+
+/* ============================================================
+   14. FOOTER
+   Four-column footer with brand, links, location, contact.
+============================================================ */
+.footer {
+  background-color: var(--navy);
+  color: rgba(255,255,255,0.75);
+}
+
+.footer-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 4rem var(--container-px) 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+.footer-logo {
+  height: 60px;
+  width: auto;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer-heading {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer-links a,
+.footer-contact a {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.65);
+  transition: color var(--transition);
+}
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: var(--gold);
+}
+
+.footer-address {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+}
+.footer-contact i {
+  color: var(--gold);
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+/* Footer bottom bar — copyright line */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  padding: 1.2rem var(--container-px);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+}
+
+
+/* ============================================================
+   15. BACK-TO-TOP BUTTON
+   Fixed bottom-right corner button, shown after scroll.
+============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 900;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--gold);
+  color: var(--navy);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0;                          /* Hidden by default */
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity var(--transition), transform var(--transition), background-color var(--transition);
+}
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background-color: var(--gold-light);
+}
+
+
+/* ============================================================
+   16. SCROLL REVEAL ANIMATION
+   Elements with class .reveal fade up into view when they
+   enter the viewport (triggered via IntersectionObserver in script.js).
+============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay for paired elements */
+.reveal--delay {
+  transition-delay: 0.18s;
+}
+
+
+/* ============================================================
+   17. RESPONSIVE BREAKPOINTS
+   Collapse multi-column layouts at smaller viewports.
+============================================================ */
+
+/* ── Tablet (≤ 960px) ── */
+@media (max-width: 960px) {
+
+  /* Services: 2-column grid */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* About: stack vertically */
+  .about-grid,
+  .meet-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Move image above text on mobile for about/meet */
+  .about-image-wrap,
+  .meet-image-wrap {
+    order: -1;
+  }
+
+  .about-image,
+  .meet-image {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  /* Footer: 2-column */
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contact: stack */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Mobile (≤ 640px) ── */
+@media (max-width: 640px) {
+
+  :root {
+    --section-py: 4rem;
+  }
+
+  /* Services: single column */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Nav: show hamburger, hide links */
+  .nav-toggle {
+    display: flex;
+  }
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--navy);
+    padding: 1rem 0;
+    gap: 0;
+    box-shadow: var(--shadow-md);
+  }
+  .nav-menu.open {
+    display: flex;
+  }
+  .nav-link {
+    padding: 0.85rem 1.5rem;
+    border-radius: 0;
     width: 100%;
-    padding-top: 7vw;
-    padding-bottom: 8vw;
-}
-
-.image1 {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    /* left:50px; */
-    position: relative;
-    z-index: 5;
-}
-
-.box1{
-    display: flex;
-    width: 25vw;
-    height: 18vw;
-    top: -1px;
-    left: 50px;
-    background-color:#3c5a9b;
-    z-index: 3;
-    flex: content;
-    position: absolute;
-}
-
-.box2{
-    display: flex;
-    width: 25vw;
-    height: 24vw;
-    top: 120px;
-    left: 120px;
-    background-color: rgb(83, 83, 83);
-    z-index: 4;
-    flex: content;
-    position: absolute;
-}
-
-.box3{
-    display: flex;
-    width: 200px;
-    height: 18vw;
-    top: -20px;
-    left: 20vw;
-    background-color:#3c5a9b;
-    z-index: 4;
-    flex: content;
-    position: absolute;
-}
-
-.box4{
-    display: flex;
-    width: 30vw;
-    height: 24vw;
-    top: 10px;
-    left: 20px;
-    background-color: rgb(83, 83, 83);
-    z-index: 3;
-    flex: content;
-    position: absolute;
-}
-
-.hotel {
-    padding-bottom: 3vw;
-    padding-top: 3vw;
-}
-
-.golf {
-    padding-bottom: 6vw;
-    padding-top:3vw;
-}
-
-.india {
-    padding-top: 6vw;
-    padding-bottom: 3vw;
-}
-
-.kilo {
-    padding-bottom: 5vw;
-    padding-top: 5vw;
-}
-
-.lima {
-    color: white;
-}
-
-.mike {
-    padding-top: 0.5vw;
-}
-
-.november {
-    padding-top: 2vw;
-}
-
-.oscar {
-    padding-top: 1vw;
-}
-
-.services{
-    display: flex;
-    justify-content: center;
-}
-
-.services1{
-    width: 250px;
-    height: 300px;
-    justify-content: center;
-    margin: 5px;
-    border-radius: 25px;
-    background:  rgb(83, 83, 83);
-    padding: 20px; 
-}
-
-.services2{
-    margin-bottom: 0px;
-    position: relative;
-    top: 55px;
-    color: white;
-}
-
-#search{
-    display:flex;
-    justify-content: center; 
-    position: relative;
-    top: 50px;
-    color: white;
-}
-
-#folder{
-    display:flex;
-    justify-content: center; 
-    position: relative;
-    top: 50px;
-    color: white;
-}
-
-#notes{
-    display:flex;
-    justify-content: center; 
-    position: relative;
-    top: 50px;
-    color: white;
-}
-
-#hospital{
-    display:flex;
-    justify-content: center; 
-    position: relative;
-    top: 50px;
-    color: white;
-}
-
-#calendar{
-    display:flex;
-    justify-content: center; 
-    position: relative;
-    top: 50px;
-    color: white;
-}
-
-#book{
-    display:flex;
-    justify-content: center; 
-    position: relative;
-    top: 50px;
-    color: white;
-}
-
-#gavel{
-    display:flex;
-    justify-content: center; 
-    position: relative;
-    top: 50px; 
-    color: white;
-}
-
-#university{
-    display:flex;
-    justify-content: center; 
-    position: relative;
-    top: 50px;
-    color: white;
-}
-
-.color3 {
-    background-color:black;
-}
-
-.color4 {
-    background-color: #882FF6;
-}
-
-.image2 {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    /* left:50px; */
-    position: relative;
-    z-index: 5;
-}
-
-.meet1 {
-    margin-bottom: 0px;
-}
-
-.meet2 {
-    margin-top: 0px;
-}
-
-.zulu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#contact {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.xray {
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    height: auto;
-    margin-left: 16vw;
-    margin-top: 80px;
-}
-
-.romeo {
-    padding: 5px;
-    margin: auto;
-}
-
-.juliet {
-    padding: 10px;
-}
-
-.color5 {
-    background-color: #37B6F6;
-}
-
-.card {
-    background-color: black;
-}
-
-.alpha {
-    padding-left: 20px;
-}
-
-.bravo {
-    padding-left: 20px;
-    font-size: xx-large;
-}
-
-.link {
-    display: block;
-    color: white;
+  }
+  .nav-link--cta {
+    margin: 0.5rem 1.5rem;
+    width: calc(100% - 3rem);
     text-align: center;
-    border-right: 20px;
-}
+    border-radius: 50px;
+  }
+  .nav-title {
+    font-size: 0.78rem;
+    max-width: 200px;
+  }
 
-.link:hover {
-    background-color: green;
-}
+  /* Hero tweaks */
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.image {
-    width: 10px;
-}
+  /* Footer: single column */
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 
-.uniform {
-    padding-top: 50vh;
-    padding-bottom: 50vh;
-}
+  /* Meet photos: stack */
+  .meet-photos {
+    flex-direction: column;
+  }
 
-.delta {
-    padding-top: 3.5vh;
-}
-
-.papa {
-    padding: 20px;
-}
-
-.abc {
-    font-size: 10vh;
-}
-
-.tri {
-    padding-bottom: 10vh;
-}
-
-.beta {
-    padding-bottom: 10vh;
-}
-
-.yankee {
-    padding-top: 3.5vw;
+  /* Credentials: stack */
+  .credentials-grid {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
